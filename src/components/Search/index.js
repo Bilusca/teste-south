@@ -1,13 +1,16 @@
 import { debounce } from "lodash";
 import React, { useCallback, useEffect, useState } from "react";
 import comicsService from "../../services/comics";
+import useAppContext from '../../useAppContext';
 
 function Search() {
   const [comic, setComic] = useState('');
+  const { setComics } = useAppContext();
 
   const searchComic = () => {
     comicsService.getComics(comic).then((resp) => {
-      console.log(resp);
+      console.log(resp.data)
+      setComics(resp.data.data.results)
     });
   }
 
