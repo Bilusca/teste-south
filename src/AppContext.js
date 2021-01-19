@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export const AppContext = createContext();
 
@@ -11,14 +11,23 @@ export default ({ children }) => {
   const [selectedModalOpen, setSelectedModalOpen] = useState(false);
 
   const addFavoriteComic = (comic) => {
-    const comicExists = favoriteComics.findIndex(fComic => comic.id === fComic.id );
+    const comicExists = favoriteComics.findIndex(
+      (fComic) => comic.id === fComic.id
+    );
 
-    if(comicExists === -1) {
+    if (comicExists === -1) {
       setFavoriteComics([...favoriteComics, comic]);
-      toast.success('Quadrinho adicionado aos favoritos!');
+      toast.success("Quadrinho adicionado aos favoritos!");
     } else {
-      toast.error('Esse quadrinho já foi adicionado!');
+      toast.error("Esse quadrinho já foi adicionado!");
     }
+  };
+
+  const removeFavoriteComic = (comic) => {
+    setFavoriteComics(
+      favoriteComics.filter((fComic) => fComic.id !== comic.id)
+    );
+    toast.success("Quadrinho removido dos favoritos!");
   };
 
   const defaultContext = {
@@ -31,7 +40,8 @@ export default ({ children }) => {
     favoriteComics,
     addFavoriteComic,
     selectedModalOpen,
-    setSelectedModalOpen
+    setSelectedModalOpen,
+    removeFavoriteComic,
   };
 
   return (

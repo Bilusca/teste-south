@@ -1,5 +1,5 @@
 .SelectedComics {
-  background: #fff;
+  background: #bc6ff1;
   border-radius: 3px;
   left: 50%;
   max-height: 90vh;
@@ -14,11 +14,12 @@
   flex-direction: column;
   outline: none;
   width: 95%;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
 
   .close-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 1px;
+    right: 1px;
     font-size: 14px;
     text-transform: uppercase;
     color: #fff;
@@ -37,6 +38,40 @@
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+
+  .item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 5%;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    button {
+      border-radius: 3px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: #892cdc;
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
+      transition: 0.3s ease all;
+
+      &:hover {
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8);
+        background-color: #892cdc;
+      }
+    }
   }
 }
 

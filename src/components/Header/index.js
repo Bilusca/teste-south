@@ -4,7 +4,7 @@ import logo from '../../images/marvel-logo.png';
 function Header() {
   return (
     <div>
-      <img src={logo} />
+      <img src={logo} alt="Logo" />
     </div>
   )
 }
