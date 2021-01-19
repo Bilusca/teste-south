@@ -23,3 +23,7 @@ Depois de entrar no projeto clonado rodar:
 Para buildar o projeto, basta rodar:
 
 `yarn build`
+
+# Projeto online
+
+[Site](https://marvelcomicssouth.netlify.app/)
