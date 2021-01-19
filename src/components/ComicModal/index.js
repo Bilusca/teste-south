@@ -1,6 +1,7 @@
-import { clone } from 'lodash';
 import React from "react";
 import ReactModal from "react-modal";
+import { clone } from "lodash";
+
 import useAppContext from "../../useAppContext";
 import "./ComicModal.scss";
 
@@ -47,7 +48,12 @@ function ComicModal() {
                 ))}
               <p className="title">Número de páginas:</p>
               <p>{selectedComic.pageCount}</p>
-              <button className="add-button" onClick={() => addFavoriteComic(clone(selectedComic))}>Adicionar aos favoritos</button>
+              <button
+                className="add-button"
+                onClick={() => addFavoriteComic(clone(selectedComic))}
+              >
+                Adicionar aos favoritos
+              </button>
             </div>
           </div>
         </>

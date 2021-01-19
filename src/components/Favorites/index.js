@@ -1,4 +1,5 @@
 import React from "react";
+
 import useAppContext from "../../useAppContext";
 import "./Favorites.scss";
 

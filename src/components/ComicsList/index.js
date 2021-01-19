@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react';
-import useAppContext from '../../useAppContext';
-import Comic from '../Comic';
-import './ComicsList.scss';
+import React from "react";
+
+import useAppContext from "../../useAppContext";
+import BlankState from "../BlankState";
+import Comic from "../Comic";
+import "./ComicsList.scss";
 
 function ComicsList() {
-  const { comics, favoriteComics } = useAppContext();
-
-  useEffect(() => {
-    console.log(favoriteComics)
-  }, [favoriteComics])
+  const { comics } = useAppContext();
 
   return (
-    <div className="ComicsList">
-      {comics && comics.map(comic => (
-        <Comic key={comic.id} comic={comic} />
-      ))}
-    </div>
-  )
+    <>
+      <div className="ComicsList">
+        {comics &&
+          comics.map((comic) => <Comic key={comic.id} comic={comic} />)}
+      </div>
+      {!comics.length && <BlankState />}
+    </>
+  );
 }
 
 export default ComicsList;

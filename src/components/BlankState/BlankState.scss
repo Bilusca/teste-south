@@ -1,0 +1,27 @@
+@import "../../mq";
+
+.BlankState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 45%;
+    margin-bottom: 15px;
+
+    @include mq($until: tablet) {
+      width: 60%;
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+
+    @include mq($until: tablet) {
+      font-size: 25px;
+    }
+  }
+}

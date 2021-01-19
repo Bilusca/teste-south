@@ -1,4 +1,4 @@
-@import '../../mq';
+@import "../../mq";
 
 .ComicModal {
   background: #bc6ff1;
@@ -16,7 +16,7 @@
   flex-direction: column;
   outline: none;
   width: 95%;
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0, .8);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
 
   .close-button {
     position: absolute;
@@ -55,8 +55,8 @@
     outline: none;
     cursor: pointer;
     text-transform: uppercase;
-    background-color:  #892cdc;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0, .8);
+    background-color: #892cdc;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.8);
     transition: 0.3s ease all;
 
     @include mq($until: tablet) {
@@ -64,7 +64,7 @@
     }
 
     &:hover {
-      box-shadow: 0px 0px 0px 0px rgba(0,0,0, .8);
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8);
       background-color: #892cdc;
     }
   }
@@ -96,7 +96,6 @@
       }
     }
   }
-
 }
 
 .overlay {

@@ -1,6 +1,7 @@
 import React from "react";
-import useAppContext from '../../useAppContext';
-import './Comic.scss';
+
+import useAppContext from "../../useAppContext";
+import "./Comic.scss";
 
 function Comic(props) {
   const {
@@ -12,7 +13,7 @@ function Comic(props) {
   const handleSelection = () => {
     setSelectedComic(comic);
     setIsOpen(true);
-  }
+  };
 
   return (
     <div className="Comic" onClick={() => handleSelection()}>

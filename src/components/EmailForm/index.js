@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+
 import useAppContext from "../../useAppContext";
 import "./EmailForm.scss";
 
