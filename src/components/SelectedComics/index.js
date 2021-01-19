@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import useAppContext from "../../useAppContext";
+import EmailForm from '../EmailForm';
 import './SelectedComics.scss';
 
 function SelectedComics() {
@@ -36,6 +37,7 @@ function SelectedComics() {
           </div>
         ))}
       </div>
+      <EmailForm />
     </ReactModal>
   );
 }

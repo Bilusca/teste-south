@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from '../../images/marvel-logo.png';
+import './Header.scss';
 
 function Header() {
   return (
-    <div>
+    <div className="Header">
       <img src={logo} alt="Logo" />
     </div>
   )

@@ -1,0 +1,14 @@
+@import '../../mq';
+
+.Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq($until: tablet) {
+    img {
+      width: 70%;
+    }
+  }
+}
