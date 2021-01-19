@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { toast } from 'react-toastify';
 
 export const AppContext = createContext();
 
@@ -6,11 +7,19 @@ export default ({ children }) => {
   const [comics, setComics] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedComic, setSelectedComic] = useState({});
-  const [selectedComics, setSelectedComics] = useState([]);
+  const [favoriteComics, setFavoriteComics] = useState([]);
+  const [selectedModalOpen, setSelectedModalOpen] = useState(false);
 
-  const addSelectedComic = comic => {
-    setSelectedComic([ ...comics, comic ]);
-  } 
+  const addFavoriteComic = (comic) => {
+    const comicExists = favoriteComics.findIndex(fComic => comic.id === fComic.id );
+
+    if(comicExists === -1) {
+      setFavoriteComics([...favoriteComics, comic]);
+      toast.success('Quadrinho adicionado aos favoritos!');
+    } else {
+      toast.error('Esse quadrinho já foi adicionado!');
+    }
+  };
 
   const defaultContext = {
     comics,
@@ -19,8 +28,10 @@ export default ({ children }) => {
     setIsOpen,
     selectedComic,
     setSelectedComic,
-    selectedComics,
-    addSelectedComic,
+    favoriteComics,
+    addFavoriteComic,
+    selectedModalOpen,
+    setSelectedModalOpen
   };
 
   return (

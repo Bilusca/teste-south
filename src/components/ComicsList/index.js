@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useAppContext from '../../useAppContext';
 import Comic from '../Comic';
 import './ComicsList.scss';
 
 function ComicsList() {
-  const { comics } = useAppContext();
+  const { comics, favoriteComics } = useAppContext();
+
+  useEffect(() => {
+    console.log(favoriteComics)
+  }, [favoriteComics])
 
   return (
     <div className="ComicsList">
