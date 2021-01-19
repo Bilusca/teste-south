@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://gateway.marvel.com:443/v1/public/";
 
-export default {
+const request = {
   send: (route, method, payload) => {
     return axios[method](route, payload, {
       headers: {
@@ -12,3 +12,5 @@ export default {
     });
   },
 };
+
+export default request;

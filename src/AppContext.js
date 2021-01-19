@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export const AppContext = createContext();
 
-export default ({ children }) => {
+function AppContextProvider({ children }) {
   const [comics, setComics] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedComic, setSelectedComic] = useState({});
@@ -48,3 +48,5 @@ export default ({ children }) => {
     <AppContext.Provider value={defaultContext}>{children}</AppContext.Provider>
   );
 };
+
+export default AppContextProvider;
