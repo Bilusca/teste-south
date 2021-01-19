@@ -9,7 +9,7 @@ function ComicsList() {
   return (
     <div className="ComicsList">
       {comics && comics.map(comic => (
-        <Comic comic={comic} />
+        <Comic key={comic.id} comic={comic} />
       ))}
     </div>
   )

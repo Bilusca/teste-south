@@ -9,7 +9,6 @@ function Search() {
 
   const searchComic = () => {
     comicsService.getComics(comic).then((resp) => {
-      console.log(resp.data)
       setComics(resp.data.data.results)
     });
   }
@@ -27,6 +26,11 @@ function Search() {
     setComic(event.target.value)
   }
 
+  const clearSearch = () => {
+    setComics([]);
+    setComic('');
+  }
+
   return (
     <div>
       <input
@@ -34,6 +38,7 @@ function Search() {
         value={comic}
         onChange={handleChange}
       />
+      <button onClick={() => clearSearch()}>limpar</button>
     </div>
   );
 }

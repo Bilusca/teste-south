@@ -1,6 +1,6 @@
 .ComicsList {
+  width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 50px;
-  grid-row-gap: 50px;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 20px;
 }
